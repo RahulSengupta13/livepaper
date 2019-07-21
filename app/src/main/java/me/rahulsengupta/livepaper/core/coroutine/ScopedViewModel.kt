@@ -16,7 +16,7 @@ open class ScopedViewModel : ViewModel() {
     private val job = Job()
 
     protected val coroutineScope: CoroutineScope
-        get() = CoroutineScope(job + coroutineExceptionHandler + Dispatchers.Main)
+        get() = CoroutineScope(job + coroutineExceptionHandler + Dispatchers.IO)
 
     override fun onCleared() {
         super.onCleared()
