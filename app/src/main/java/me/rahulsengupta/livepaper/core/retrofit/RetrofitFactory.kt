@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitFactory {
     private const val BASE_URL_UNSPLASH = "https://api.unsplash.com/"
 
-    fun createUnsplashRetrofitclient(): UnsplashEndpoints {
+    fun createUnsplashRetrofitClient(): UnsplashEndpoints {
         val okHttpClient = OkHttpClient.Builder()
         val loggingInterceptor = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
