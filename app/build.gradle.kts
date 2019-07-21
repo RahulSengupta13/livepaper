@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    kotlin("android.extensions")
+    id("kotlin-android-extensions")
     kotlin("kapt")
 }
 
@@ -27,14 +27,11 @@ android {
     }
 }
 
-androidExtensions {
-    isExperimental = true
-}
-
 dependencies {
     implementation(project(":network"))
 
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.40")
     implementation("androidx.appcompat:appcompat:1.0.2")
     implementation("androidx.core:core-ktx:1.2.0-alpha02")
