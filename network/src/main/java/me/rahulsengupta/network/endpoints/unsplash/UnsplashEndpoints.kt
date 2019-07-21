@@ -1,0 +1,3 @@
+package me.rahulsengupta.network.endpoints.unsplash
+
+interface UnsplashEndpoints

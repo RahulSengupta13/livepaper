@@ -20,6 +20,11 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
+
+        getByName("debug") {
+            val LivePaper_Unsplash_AccessKey: String by project
+            buildConfigField("String", "LivePaperUnsplashAccessKey", LivePaper_Unsplash_AccessKey)
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
