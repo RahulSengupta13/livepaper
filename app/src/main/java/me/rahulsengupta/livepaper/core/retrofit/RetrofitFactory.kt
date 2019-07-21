@@ -28,7 +28,7 @@ object RetrofitFactory {
 
             val requestBuilder = request
                 .newBuilder()
-                .addHeader("Authorization:", "Client-ID ${BuildConfig.LivePaperUnsplashAccessKey}")
+                .addHeader("Authorization", "Client-ID ${BuildConfig.LivePaperUnsplashAccessKey}")
                 .url(url)
             chain.proceed(requestBuilder.build())
         }
