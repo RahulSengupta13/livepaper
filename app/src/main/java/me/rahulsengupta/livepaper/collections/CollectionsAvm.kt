@@ -42,7 +42,7 @@ class CollectionsAvm(api: CollectionsApi) : ScopedViewModel() {
     /**
      * Actionables
      * */
-    fun setup() {
-        coroutineScope.launch { _logic.setup() }
+    fun onSwipeToRefresh() {
+        _collectionsPagedListSource.value?.invalidate()
     }
 }

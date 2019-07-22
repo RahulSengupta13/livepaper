@@ -76,6 +76,9 @@ dependencies {
     //picasso
     implementation("com.squareup.picasso:picasso:2.71828")
 
+    //palette
+    implementation("com.android.support:palette-v7:28.0.0")
+
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")

@@ -8,10 +8,10 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_collection_layout.view.*
 import me.rahulsengupta.livepaper.R
 import me.rahulsengupta.livepaper.collections.models.CollectionViewModel
+import me.rahulsengupta.livepaper.core.utils.setImage
 
 class CollectionsPagedAdapter(
     val listener: Listener
@@ -23,7 +23,7 @@ class CollectionsPagedAdapter(
 
     override fun onBindViewHolder(holder: CollectionViewHolder, position: Int) {
         getItem(position)?.run {
-            Picasso.get().load(coverUrl).into(holder.collectionImage)
+            holder.collectionImage.setImage(coverUrl)
             holder.root.setOnClickListener { Unit }
         }
     }
@@ -40,6 +40,7 @@ class CollectionsPagedAdapter(
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<CollectionViewModel>() {
             override fun areItemsTheSame(oldItem: CollectionViewModel, newItem: CollectionViewModel) =
                 oldItem.collectionId == oldItem.collectionId
+
             override fun areContentsTheSame(oldItem: CollectionViewModel, newItem: CollectionViewModel) =
                 oldItem == newItem
         }

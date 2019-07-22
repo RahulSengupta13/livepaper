@@ -29,4 +29,6 @@ class CollectionsFragment : Fragment(), CollectionsPresenter.Listener {
 
         return root
     }
+
+    override fun onSwipeToRefresh() = avm.onSwipeToRefresh()
 }
