@@ -1,14 +1,14 @@
-package me.rahulsengupta.livepaper.home.api
+package me.rahulsengupta.livepaper.collections.api
 
 import me.rahulsengupta.livepaper.core.retrofit.RetrofitResult
 import me.rahulsengupta.livepaper.core.retrofit.getRetrofitResult
 import me.rahulsengupta.network.endpoints.unsplash.UnsplashEndpoints
-import me.rahulsengupta.network.endpoints.unsplash.responses.Collections
+import me.rahulsengupta.network.endpoints.unsplash.responses.Collection
 
-interface HomeApi {
-    fun getCollections(page: Int, perPage: Int): RetrofitResult<List<Collections>>
+interface CollectionsApi {
+    fun getCollections(page: Int, perPage: Int): RetrofitResult<List<Collection>>
 }
 
-class HomeApiImpl(private val api: UnsplashEndpoints) : HomeApi {
+class CollectionsApiImpl(private val api: UnsplashEndpoints) : CollectionsApi {
     override fun getCollections(page: Int, perPage: Int) = api.getCollections(page, perPage).getRetrofitResult()
 }

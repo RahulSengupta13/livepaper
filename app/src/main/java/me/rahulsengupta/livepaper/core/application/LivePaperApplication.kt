@@ -2,7 +2,7 @@ package me.rahulsengupta.livepaper.core.application
 
 import android.app.Application
 import me.rahulsengupta.livepaper.core.di.appModule
-import me.rahulsengupta.livepaper.core.di.homeModule
+import me.rahulsengupta.livepaper.core.di.collectionsModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -19,7 +19,7 @@ class LivePaperApplication : Application() {
         startKoin {
             androidLogger(level = Level.INFO)
             androidContext(this@LivePaperApplication)
-            modules(listOf(appModule, homeModule))
+            modules(listOf(appModule, collectionsModule))
         }
     }
 }

@@ -1,6 +1,6 @@
 package me.rahulsengupta.network.endpoints.unsplash
 
-import me.rahulsengupta.network.endpoints.unsplash.responses.Collections
+import me.rahulsengupta.network.endpoints.unsplash.responses.Collection
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -11,5 +11,5 @@ interface UnsplashEndpoints {
     fun getCollections(
         @Query("page") page: Int,
         @Query("per_page") perPage: Int
-    ): Call<List<Collections>>
+    ): Call<List<Collection>>
 }
