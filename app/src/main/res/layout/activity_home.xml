@@ -29,7 +29,7 @@
             app:itemHorizontalTranslationEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             android:elevation="@dimen/default_elevation"
-            app:backgroundTint="@color/colorPrimary"
+            app:backgroundTint="@color/colorPrimaryDark"
             android:theme="@style/Widget.BottomNavigationView"
             app:itemIconTint="@color/gray_selector"
             app:layout_constraintTop_toBottomOf="@id/nav_host_fragment"

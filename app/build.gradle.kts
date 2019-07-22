@@ -70,6 +70,9 @@ dependencies {
     implementation("androidx.room:room-ktx:2.1.0")
     kapt("androidx.room:room-compiler:2.1.0")
 
+    //viewpager2
+    implementation("androidx.viewpager2:viewpager2:1.0.0-beta02")
+
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")

@@ -9,13 +9,17 @@ import me.rahulsengupta.livepaper.R
 import me.rahulsengupta.livepaper.home.HomeFragmentAvm
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), HomeFragmentPresenter.Listener {
 
     private val avm: HomeFragmentAvm by viewModel()
+    private lateinit var presenterContainer: HomeFragmentPresenter.Container
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        presenterContainer = HomeFragmentPresenter.Container(root, this, this)
+
         avm.setup()
 
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return root
     }
 }
