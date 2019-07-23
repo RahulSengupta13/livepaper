@@ -3,13 +3,14 @@
 <com.google.android.material.card.MaterialCardView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/collection_root"
-        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/colorPrimaryDark"
         app:cardCornerRadius="@dimen/margin_small"
         app:cardElevation="2dp"
-        android:layout_height="wrap_content">
+        app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -31,11 +32,66 @@
 
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/collection_image"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
                 android:scaleType="centerCrop"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <View
+                android:id="@+id/collection_details_bg"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:background="@color/translucentBlack"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/collection_author_image"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:civ_border_color="@color/lightGray"
+                android:layout_marginEnd="@dimen/margin_medium"
+                app:layout_constraintStart_toStartOf="@id/start_guideline"
+                app:layout_constraintEnd_toStartOf="@id/collection_title_author"
+                app:layout_constraintTop_toTopOf="@id/collection_details_bg"
+                app:layout_constraintBottom_toBottomOf="@id/collection_details_bg"
+                app:civ_border_width="1dp"/>
+
+        <TextView
+                android:id="@+id/collection_title_author"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textColor="@color/lightGray"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toEndOf="@id/collection_author_image"
+                app:layout_constraintTop_toTopOf="@id/collection_author_image"
+                tools:text="A collection of Dogs by Xan"/>
+
+        <TextView
+                android:id="@+id/collection_photos_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/lightGray"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+                app:layout_constraintStart_toStartOf="@id/collection_title_author"
+                app:layout_constraintTop_toBottomOf="@id/collection_title_author"
+                tools:text="12 Photos"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/collection_info"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:src="@drawable/ic_round_info_24px"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_width="match_parent"
-                android:layout_height="325dp"/>
+                app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

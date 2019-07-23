@@ -3,6 +3,7 @@ package me.rahulsengupta.livepaper.collections.ui
 import android.view.View
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import kotlinx.android.synthetic.main.fragment_collections.view.*
@@ -18,7 +19,7 @@ class CollectionsPresenter {
 
         init {
             recyclerView.apply {
-                layoutManager = GridLayoutManager(root.context, GRID_SPAN, RecyclerView.VERTICAL, false)
+                layoutManager = LinearLayoutManager(root.context, RecyclerView.VERTICAL, false)
                 setHasFixedSize(true)
             }
 

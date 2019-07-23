@@ -7,8 +7,11 @@ data class Collection(
     val id: Int,
     val title: String?,
     val description: String?,
+    val user: User?,
     @SerializedName("cover_photo")
-    val coverPhoto: CoverPhoto
+    val coverPhoto: CoverPhoto,
+    @SerializedName("total_photos")
+    val totalPhotos: Int?
 ) : Serializable {
 
     data class CoverPhoto(
@@ -17,6 +20,18 @@ data class Collection(
 
         data class Urls(
             val regular: String?
+        ) : Serializable
+    }
+
+    data class User(
+        val name: String?,
+        @SerializedName("profile_image")
+        val image: UserImage?
+    ) : Serializable {
+
+        data class UserImage(
+            val medium: String?,
+            val large: String?
         ) : Serializable
     }
 }

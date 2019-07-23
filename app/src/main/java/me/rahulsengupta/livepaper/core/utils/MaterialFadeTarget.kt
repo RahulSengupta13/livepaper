@@ -18,7 +18,8 @@ import com.squareup.picasso.Target
 class MaterialFadeTarget(
     private val imageView: ImageView,
     private val imageUrl: String,
-    private val context: Context
+    private val context: Context,
+    private val block: ((PaletteColorModel) -> Unit)
 ) : Target {
     override fun onBitmapFailed(e: java.lang.Exception?, errorDrawable: Drawable?) {
         imageView.setImageDrawable(errorDrawable)
@@ -71,6 +72,17 @@ class MaterialFadeTarget(
         } else {
             imageView.setImageBitmap(bitmap)
         }
+
+        val bitmapPalette = bitmap.createPalette()
+        block(
+            PaletteColorModel(
+                bitmapPalette.lightVibrantSwatch?.rgb,
+                bitmapPalette.darkVibrantSwatch?.rgb,
+                bitmapPalette.mutedSwatch?.rgb,
+                bitmapPalette.lightMutedSwatch?.rgb,
+                bitmapPalette.darkMutedSwatch?.rgb
+            )
+        )
     }
 
     override fun onPrepareLoad(placeHolderDrawable: Drawable) {

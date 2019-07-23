@@ -10,5 +10,5 @@ val collectionsModule = module {
     factory<CollectionsApi> {
         CollectionsApiImpl(get())
     }
-    viewModel { CollectionsAvm(get()) }
+    viewModel { CollectionsAvm(get(), get()) }
 }
