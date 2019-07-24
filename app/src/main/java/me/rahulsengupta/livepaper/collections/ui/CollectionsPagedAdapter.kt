@@ -13,11 +13,13 @@ import me.rahulsengupta.livepaper.collections.models.NormalCollectionViewModel
 import me.rahulsengupta.livepaper.collections.ui.CollectionsPagedAdapter.ViewType.*
 
 class CollectionsPagedAdapter(
-    val listener: Listener
+    private val listener: Listener
 ) : PagedListAdapter<CollectionViewModel, RecyclerView.ViewHolder>(DIFF_CALLBACK) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val viewTypeEnum = values()[viewType]
         val root = LayoutInflater.from(parent.context).inflate(viewTypeEnum.layoutId, parent, false)
+
         return when (viewTypeEnum) {
             ITEM_FEATURED -> FeaturedCollectionItemPresenter.Container(root, listener)
             ITEM_NORMAL -> NormalCollectionItemPresenter.Container(root, listener)
