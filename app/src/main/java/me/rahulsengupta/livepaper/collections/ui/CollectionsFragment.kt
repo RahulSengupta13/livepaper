@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import me.rahulsengupta.livepaper.R
 import me.rahulsengupta.livepaper.collections.CollectionsAvm
+import me.rahulsengupta.livepaper.collections.models.FeaturedCollectionViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class CollectionsFragment : Fragment(), CollectionsPresenter.Listener {
@@ -28,6 +30,12 @@ class CollectionsFragment : Fragment(), CollectionsPresenter.Listener {
         })
 
         return root
+    }
+
+
+    override fun onAuthorClicked(viewModel: FeaturedCollectionViewModel) {
+        val args = Bundle().apply { putSerializable("collectionDialogPayload", viewModel) }
+        findNavController().navigate(R.id.action_homeFragment_to_collectionDialogFragment, args, null, null)
     }
 
     override fun onSwipeToRefresh() = avm.onSwipeToRefresh()

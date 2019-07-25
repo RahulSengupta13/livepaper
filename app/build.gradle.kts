@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("kotlin-android-extensions")
+    id("androidx.navigation.safeargs")
     kotlin("kapt")
 }
 
@@ -25,6 +26,9 @@ android {
             val LivePaper_Unsplash_AccessKey: String by project
             buildConfigField("String", "LivePaperUnsplashAccessKey", LivePaper_Unsplash_AccessKey)
         }
+    }
+    androidExtensions {
+        isExperimental = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

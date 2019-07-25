@@ -3,9 +3,8 @@ package me.rahulsengupta.livepaper.collections.models
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
 import androidx.paging.PageKeyedDataSource
-import org.koin.core.KoinComponent
 
-class CollectionsFactory : DataSource.Factory<Int, CollectionViewModel>(), KoinComponent {
+class CollectionsFactory : DataSource.Factory<Int, CollectionViewModel>() {
 
     private val _collectionsSource = MutableLiveData<PageKeyedDataSource<Int, CollectionViewModel>>()
 
