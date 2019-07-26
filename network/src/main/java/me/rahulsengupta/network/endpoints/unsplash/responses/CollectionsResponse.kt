@@ -10,6 +10,8 @@ data class Collection(
     val user: User?,
     @SerializedName("cover_photo")
     val coverPhoto: CoverPhoto,
+    @SerializedName("published_at")
+    val publishedAt: String?,
     @SerializedName("total_photos")
     val totalPhotos: Int?
 ) : Serializable {

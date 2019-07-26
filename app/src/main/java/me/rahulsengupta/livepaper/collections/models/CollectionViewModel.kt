@@ -15,9 +15,11 @@ data class FeaturedCollectionViewModel(
     val collectionId: Int,
     val coverUrl: String,
     val collectionName: String?,
+    val collectionDescription: String?,
     val photoCount: Int?,
     val authorName: String?,
-    val authorImageUrl: String
+    val authorImageUrl: String,
+    val publishedAt: String?
 ) : CollectionViewModel(), Parcelable, Serializable {
     override fun viewType() = CollectionsPagedAdapter.ViewType.ITEM_FEATURED
     override fun uniqueId() = CollectionsPagedAdapter.ViewType.ITEM_FEATURED.name
