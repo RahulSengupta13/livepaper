@@ -21,6 +21,16 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlNormal">@color/lightGray</item>
+    </style>
+
+    <style name="ToolbarTextAppearance">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/lightGray</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
     <style name="DialogStyle" parent="Theme.AppCompat.Dialog.Alert"/>
 
 </resources>

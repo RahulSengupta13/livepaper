@@ -42,12 +42,13 @@ class FeaturedCollectionItemPresenter {
             container.authorImage.setImage(viewModel.authorImageUrl) { model ->
                 model.muted?.let { container.authorImage.borderColor = it }
             }
-            container.root.setOnClickListener { Unit }
+            container.root.setOnClickListener { container.listener.onCollectionClicked(viewModel.collectionId) }
             container.authorImage.setOnClickListener { container.listener.onAuthorClicked(viewModel) }
         }
     }
 
     interface Listener {
         fun onAuthorClicked(viewModel: FeaturedCollectionViewModel)
+        fun onCollectionClicked(collectionId: Int?)
     }
 }

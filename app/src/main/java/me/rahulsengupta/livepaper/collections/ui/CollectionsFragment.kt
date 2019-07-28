@@ -38,5 +38,9 @@ class CollectionsFragment : Fragment(), CollectionsPresenter.Listener {
         findNavController().navigate(R.id.action_homeFragment_to_collectionDialogFragment, args, null, null)
     }
 
+    override fun onCollectionClicked(collectionId: Int?) {
+        findNavController().navigate(R.id.action_homeFragment_to_collectionDetailsFragment)
+    }
+
     override fun onSwipeToRefresh() = avm.onSwipeToRefresh()
 }

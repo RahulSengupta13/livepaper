@@ -11,6 +11,8 @@
               tools:layout="@layout/fragment_home">
         <action android:id="@+id/action_homeFragment_to_collectionDialogFragment"
                 app:destination="@id/collectionDialogFragment"/>
+        <action android:id="@+id/action_homeFragment_to_collectionDetailsFragment"
+                app:destination="@id/collectionDetailsFragment"/>
     </fragment>
 
     <dialog android:id="@+id/collectionDialogFragment"
@@ -23,4 +25,8 @@
                   app:nullable="true"
                   android:defaultValue="@null"/>
     </dialog>
+    <fragment android:id="@+id/collectionDetailsFragment"
+              android:name="me.rahulsengupta.livepaper.collectiondetails.ui.CollectionDetailsFragment"
+              android:label=" "
+              tools:layout="@layout/fragment_collection_detail"/>
 </navigation>

@@ -44,7 +44,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.40")
     implementation("androidx.appcompat:appcompat:1.0.2")
     implementation("androidx.core:core-ktx:1.2.0-alpha02")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.0-beta2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.2")
     implementation("com.jakewharton.timber:timber:4.7.1")
 
