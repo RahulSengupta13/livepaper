@@ -10,8 +10,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import kotlinx.android.synthetic.main.fragment_collection_detail.view.*
 import me.rahulsengupta.livepaper.R
+import me.rahulsengupta.livepaper.collectiondetails.CollectionDetailsAvm
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class CollectionDetailsFragment : Fragment() {
+
+    private val avm: CollectionDetailsAvm by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_collection_detail, container, false)
@@ -19,6 +23,11 @@ class CollectionDetailsFragment : Fragment() {
         val toolbar = root.toolbar_collection_details
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         NavigationUI.setupActionBarWithNavController(activity as AppCompatActivity, findNavController())
+
+        arguments?.let {
+            val safeArgs = CollectionDetailsFragmentArgs.fromBundle(it)
+            avm.setup(safeArgs.collectionId)
+        }
 
         return root
     }

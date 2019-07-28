@@ -28,5 +28,7 @@
     <fragment android:id="@+id/collectionDetailsFragment"
               android:name="me.rahulsengupta.livepaper.collectiondetails.ui.CollectionDetailsFragment"
               android:label=" "
-              tools:layout="@layout/fragment_collection_detail"/>
+              tools:layout="@layout/fragment_collection_detail">
+        <argument android:name="collectionId" app:argType="integer" android:defaultValue="-1"/>
+    </fragment>
 </navigation>

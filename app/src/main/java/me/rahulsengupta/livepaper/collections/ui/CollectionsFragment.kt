@@ -39,7 +39,12 @@ class CollectionsFragment : Fragment(), CollectionsPresenter.Listener {
     }
 
     override fun onCollectionClicked(collectionId: Int?) {
-        findNavController().navigate(R.id.action_homeFragment_to_collectionDetailsFragment)
+        if (collectionId != null) {
+            val args = Bundle().apply {
+                putInt("collectionId", collectionId)
+            }
+            findNavController().navigate(R.id.action_homeFragment_to_collectionDetailsFragment, args)
+        }
     }
 
     override fun onSwipeToRefresh() = avm.onSwipeToRefresh()
