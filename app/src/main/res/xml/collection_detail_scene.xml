@@ -13,27 +13,41 @@
                 android:id="@id/collection_detail_coverPhoto"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                motion:layout_constraintLeft_toLeftOf="parent"
                 motion:layout_constraintRight_toRightOf="parent"
-                motion:layout_constraintTop_toTopOf="parent"
-                motion:layout_constraintBottom_toBottomOf="parent"/>
+                motion:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="50dp"
+                motion:layout_constraintTop_toTopOf="parent"/>
 
         <Constraint
                 android:id="@id/toolbar_collection_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintRight_toRightOf="parent"
+                motion:layout_constraintLeft_toLeftOf="parent"
                 motion:layout_constraintTop_toTopOf="parent"/>
 
         <Constraint
-                android:id="@id/collection_detail_author"
+                android:id="@id/collection_detail_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                motion:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="@dimen/margin_medium"
                 motion:layout_constraintRight_toRightOf="parent"
-                motion:layout_constraintTop_toTopOf="parent"
-                motion:layout_constraintBottom_toTopOf="@id/collection_detail_coverPhoto"/>
+                motion:layout_constraintLeft_toLeftOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/collection_detail_coverPhoto"/>
+
+        <Constraint
+                android:id="@id/collection_detail_author_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                motion:layout_constraintRight_toRightOf="parent"
+                motion:layout_constraintLeft_toLeftOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/collection_detail_name"
+                android:layout_marginTop="@dimen/margin_medium">
+
+            <CustomAttribute
+                    motion:attributeName="alpha"
+                    motion:customFloatValue="1"/>
+        </Constraint>
 
     </ConstraintSet>
 
@@ -54,13 +68,13 @@
         </Constraint>
 
         <Constraint
-                android:id="@id/collection_detail_author"
+                android:id="@id/collection_detail_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                motion:layout_constraintStart_toEndOf="@id/collection_detail_coverPhoto"
+                motion:layout_constraintLeft_toRightOf="@id/collection_detail_coverPhoto"
                 motion:layout_constraintBottom_toBottomOf="@id/collection_detail_coverPhoto"
                 motion:layout_constraintTop_toTopOf="@id/collection_detail_coverPhoto"
-                android:layout_marginStart="4dp"/>
+                android:layout_marginStart="@dimen/margin_medium"/>
 
         <Constraint
                 android:id="@id/toolbar_collection_details"
@@ -69,5 +83,18 @@
                 motion:layout_constraintStart_toStartOf="parent"
                 motion:layout_constraintEnd_toEndOf="parent"
                 motion:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+                android:id="@id/collection_detail_author_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                motion:layout_constraintRight_toRightOf="parent"
+                motion:layout_constraintLeft_toLeftOf="parent"
+                motion:layout_constraintTop_toBottomOf="parent">
+
+            <CustomAttribute
+                    motion:attributeName="alpha"
+                    motion:customFloatValue="0"/>
+        </Constraint>
     </ConstraintSet>
 </MotionScene>

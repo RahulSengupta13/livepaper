@@ -9,6 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="300dp">
+
         <me.rahulsengupta.livepaper.core.customviews.CollapsibleToolbar
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -22,31 +23,24 @@
                     app:titleTextAppearance="@style/ToolbarTextAppearance"
                     android:id="@+id/toolbar_collection_details"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    android:layout_height="wrap_content"/>
 
             <com.mikhaellopez.circularimageview.CircularImageView
                     android:id="@+id/collection_detail_coverPhoto"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     app:civ_border_width="1dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:civ_border_color="@color/white"/>
 
             <TextView
-                    android:id="@+id/collection_detail_author"
+                    android:id="@+id/collection_detail_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:textColor="#fff"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/collection_detail_coverPhoto"/>
+                    android:textColor="@color/white"/>
+
+            <include
+                    android:id="@+id/collection_detail_author_chip"
+                    layout="@layout/custom_chip_layout"/>
 
         </me.rahulsengupta.livepaper.core.customviews.CollapsibleToolbar>
     </com.google.android.material.appbar.AppBarLayout>
@@ -63,7 +57,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text="Some text"/>
-
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

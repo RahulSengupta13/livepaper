@@ -41,8 +41,8 @@ class CollectionsFragment : Fragment(), CollectionsPresenter.Listener {
 
 
     override fun onAuthorClicked(viewModel: FeaturedCollectionViewModel) {
-        val args = Bundle().apply { putSerializable("collectionDialogPayload", viewModel) }
-        findNavController().navigate(R.id.action_homeFragment_to_collectionDialogFragment, args, null, null)
+//        val args = Bundle().apply { putSerializable("collectionDialogPayload", viewModel) }
+//        findNavController().navigate(R.id.action_homeFragment_to_collectionDialogFragment, args, null, null)
     }
 
     override fun onCollectionClicked(
