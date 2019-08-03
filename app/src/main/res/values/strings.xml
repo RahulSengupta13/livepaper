@@ -13,6 +13,7 @@
     <string name="collection_dialog_author_name">by, %1$s</string>
     <string name="collection_dialog_collection_description">%1$s</string>
     <string name="collection_dialog_published_at">on, %1$s</string>
+    <string name="collection_details_favourite">Favourite</string>
     <plurals name="photos">
         <item quantity="one">%1$d Photo</item>
         <item quantity="other">%1$d Photos</item>

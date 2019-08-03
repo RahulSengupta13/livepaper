@@ -9,6 +9,11 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowContentTransitions">true</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+    </style>
+
+    <style name="OverFlowMenuButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/meteor</item>
     </style>
 
     <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
@@ -23,7 +28,13 @@
     </style>
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="colorControlNormal">@color/lightGray</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverFlowMenuButtonStyle</item>
+    </style>
+
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:popupBackground">@color/colorPrimary</item>
     </style>
 
     <style name="ToolbarTextAppearance">

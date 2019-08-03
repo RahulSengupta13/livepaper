@@ -1,9 +1,7 @@
 package me.rahulsengupta.livepaper.collectiondetails.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -19,6 +17,16 @@ class CollectionDetailsFragment : Fragment(), CollectionDetailsPresenter.Listene
 
     private val avm: CollectionDetailsAvm by viewModel()
     private lateinit var presenterContainer: CollectionDetailsPresenter.Container
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.collection_details_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_collection_detail, container, false)
