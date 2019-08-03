@@ -17,7 +17,7 @@ class NormalCollectionItemPresenter {
     class Container(rootView: View, val listener: Listener) : RecyclerView.ViewHolder(rootView) {
         val root: MaterialCardView = rootView.collection_root
         val collectionImage: AppCompatImageView = rootView.collection_image
-        val info: AppCompatImageView = rootView.collection_info
+        val favourite: AppCompatImageView = rootView.collection_favourite
         val titleAndAuthor: TextView = rootView.collection_title_author
         val photoCount: TextView = rootView.collection_photos_count
         val authorImage: CircularImageView = rootView.collection_author_image
@@ -25,9 +25,7 @@ class NormalCollectionItemPresenter {
 
     companion object {
         fun present(container: Container, viewModel: NormalCollectionViewModel) {
-            container.collectionImage.setImage(viewModel.coverUrl) {
-                container.info.setVectorColor(it.lightVibrant)
-            }
+            container.collectionImage.setImage(viewModel.coverUrl)
             container.titleAndAuthor.text = container.titleAndAuthor.context.getString(
                 R.string.collections_title_and_author_format,
                 viewModel.collectionName,
