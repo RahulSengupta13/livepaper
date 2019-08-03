@@ -10,9 +10,9 @@
     <ConstraintSet android:id="@+id/start">
 
         <Constraint
-                android:id="@id/avatar"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:id="@id/collection_detail_coverPhoto"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 motion:layout_constraintLeft_toLeftOf="parent"
                 motion:layout_constraintRight_toRightOf="parent"
                 motion:layout_constraintTop_toTopOf="parent"
@@ -27,44 +27,40 @@
                 motion:layout_constraintTop_toTopOf="parent"/>
 
         <Constraint
-                android:id="@id/name"
+                android:id="@id/collection_detail_author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 motion:layout_constraintLeft_toLeftOf="parent"
                 motion:layout_constraintRight_toRightOf="parent"
                 motion:layout_constraintTop_toTopOf="parent"
-                motion:layout_constraintBottom_toTopOf="@id/avatar">
-
-            <CustomAttribute
-                    motion:attributeName="TextSize"
-                    motion:customFloatValue="24"/>
-        </Constraint>
+                motion:layout_constraintBottom_toTopOf="@id/collection_detail_coverPhoto"/>
 
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
 
         <Constraint
-                android:id="@id/avatar"
+                android:id="@id/collection_detail_coverPhoto"
                 android:layout_width="34dp"
                 android:layout_height="34dp"
                 motion:layout_constraintLeft_toLeftOf="parent"
                 motion:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="11dp"
-                android:layout_marginLeft="50dp"/>
+                android:layout_marginLeft="50dp">
+
+            <CustomAttribute
+                    motion:attributeName="civ_border_width"
+                    motion:customFloatValue="1"/>
+        </Constraint>
 
         <Constraint
-                android:id="@id/name"
+                android:id="@id/collection_detail_author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                motion:layout_constraintStart_toEndOf="@id/avatar"
-                motion:layout_constraintBottom_toBottomOf="@id/avatar"
-                motion:layout_constraintTop_toTopOf="@id/avatar"
-                android:layout_marginStart="4dp">
-            <CustomAttribute
-                    motion:attributeName="TextSize"
-                    motion:customFloatValue="16"/>
-        </Constraint>
+                motion:layout_constraintStart_toEndOf="@id/collection_detail_coverPhoto"
+                motion:layout_constraintBottom_toBottomOf="@id/collection_detail_coverPhoto"
+                motion:layout_constraintTop_toTopOf="@id/collection_detail_coverPhoto"
+                android:layout_marginStart="4dp"/>
 
         <Constraint
                 android:id="@id/toolbar_collection_details"

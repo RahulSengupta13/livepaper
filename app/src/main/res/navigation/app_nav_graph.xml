@@ -7,7 +7,7 @@
 
     <fragment android:id="@+id/homeFragment"
               android:name="me.rahulsengupta.livepaper.home.ui.HomeFragment"
-              android:label="HomeFragment"
+              android:label=" "
               tools:layout="@layout/fragment_home">
         <action android:id="@+id/action_homeFragment_to_collectionDialogFragment"
                 app:destination="@id/collectionDialogFragment"/>
@@ -17,7 +17,7 @@
 
     <dialog android:id="@+id/collectionDialogFragment"
             android:name="me.rahulsengupta.livepaper.collectiondialog.ui.CollectionDialogFragment"
-            android:label="News Source"
+            android:label=" "
             tools:layout="@layout/collection_dialog_layout">
 
         <argument android:name="collectionDialogPayload"
@@ -30,5 +30,6 @@
               android:label=" "
               tools:layout="@layout/fragment_collection_detail">
         <argument android:name="collectionId" app:argType="integer" android:defaultValue="-1"/>
+        <argument android:name="transitionName" app:argType="string"/>
     </fragment>
 </navigation>

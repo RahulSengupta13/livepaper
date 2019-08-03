@@ -19,7 +19,8 @@ class MaterialFadeTarget(
     private val imageView: ImageView,
     private val imageUrl: String,
     private val context: Context,
-    private val block: ((PaletteColorModel) -> Unit)
+    private val block: (PaletteColorModel) -> Unit,
+    private val onResourceReady: () -> Unit = {}
 ) : Target {
     override fun onBitmapFailed(e: java.lang.Exception?, errorDrawable: Drawable?) {
         imageView.setImageDrawable(errorDrawable)
@@ -30,6 +31,7 @@ class MaterialFadeTarget(
     }
 
     override fun onBitmapLoaded(bitmap: Bitmap, from: Picasso.LoadedFrom) {
+        onResourceReady()
         val matrix = ColorMatrix()
         if (from != Picasso.LoadedFrom.MEMORY) {
             imageView.clearAnimation()

@@ -42,13 +42,19 @@ class FeaturedCollectionItemPresenter {
             container.authorImage.setImage(viewModel.authorImageUrl) { model ->
                 model.muted?.let { container.authorImage.borderColor = it }
             }
-            container.root.setOnClickListener { container.listener.onCollectionClicked(viewModel.collectionId) }
+            val transitionName = "${viewModel.collectionId}${viewModel.collectionName}"
+            container.collectionImage.transitionName = transitionName
+            container.root.setOnClickListener { container.listener.onCollectionClicked(viewModel.collectionId, container.collectionImage, transitionName) }
             container.authorImage.setOnClickListener { container.listener.onAuthorClicked(viewModel) }
         }
     }
 
     interface Listener {
         fun onAuthorClicked(viewModel: FeaturedCollectionViewModel)
-        fun onCollectionClicked(collectionId: Int?)
+        fun onCollectionClicked(
+            collectionId: Int?,
+            collectionImage: AppCompatImageView,
+            transitionName: String
+        )
     }
 }

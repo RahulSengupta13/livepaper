@@ -86,6 +86,8 @@ dependencies {
     //circular image view
     implementation("com.mikhaellopez:circularimageview:4.0.1")
 
+    implementation("androidx.recyclerview:recyclerview:1.1.0-beta01")
+
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.2.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
