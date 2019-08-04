@@ -28,6 +28,7 @@
     </style>
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@color/colorPrimary</item>
         <item name="colorControlNormal">@color/colorAccent</item>
         <item name="android:actionOverflowButtonStyle">@style/OverFlowMenuButtonStyle</item>
     </style>

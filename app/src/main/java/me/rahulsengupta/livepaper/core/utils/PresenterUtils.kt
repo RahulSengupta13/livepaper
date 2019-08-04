@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.palette.graphics.Palette
 import com.squareup.picasso.Picasso
@@ -39,4 +40,13 @@ inline fun <T : View> T.afterMeasure(crossinline f: T.() -> Unit) {
             }
         }
     })
+}
+
+fun TextView.setTextAndVisibility(string: String?) {
+    string?.let {
+        visibility = View.VISIBLE
+        text = string
+    } ?: run {
+        visibility = View.GONE
+    }
 }

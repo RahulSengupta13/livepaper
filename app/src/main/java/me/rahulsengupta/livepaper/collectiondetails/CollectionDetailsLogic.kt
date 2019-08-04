@@ -30,6 +30,7 @@ class CollectionDetailsLogic(val listener: Listener, val api: CollectionDetailsA
             return CollectionDetailsViewModel(
                 collectionDetails.title,
                 collectionDetails.user?.name,
+                collectionDetails.description,
                 collectionDetails.user?.image?.medium,
                 collectionDetails.coverPhoto?.urls?.regular
             )

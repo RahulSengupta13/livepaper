@@ -36,12 +36,29 @@
                 motion:layout_constraintTop_toBottomOf="@id/collection_detail_coverPhoto"/>
 
         <Constraint
-                android:id="@id/collection_detail_author_chip"
-                android:layout_width="wrap_content"
+                android:id="@id/collection_detail_description"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 motion:layout_constraintRight_toRightOf="parent"
                 motion:layout_constraintLeft_toLeftOf="parent"
                 motion:layout_constraintTop_toBottomOf="@id/collection_detail_name"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"
+                motion:visibilityMode="ignore"
+                android:layout_marginRight="@dimen/margin_medium">
+
+            <CustomAttribute
+                    motion:attributeName="alpha"
+                    motion:customFloatValue="1"/>
+        </Constraint>
+
+        <Constraint
+                android:id="@id/collection_detail_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                motion:layout_constraintRight_toRightOf="parent"
+                motion:layout_constraintLeft_toLeftOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/collection_detail_description"
                 android:layout_marginTop="@dimen/margin_medium">
 
             <CustomAttribute
@@ -85,7 +102,20 @@
                 motion:layout_constraintBottom_toBottomOf="parent"/>
 
         <Constraint
-                android:id="@id/collection_detail_author_chip"
+                android:id="@id/collection_detail_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                motion:layout_constraintRight_toRightOf="parent"
+                motion:layout_constraintLeft_toLeftOf="parent"
+                motion:layout_constraintTop_toBottomOf="parent">
+
+            <CustomAttribute
+                    motion:attributeName="alpha"
+                    motion:customFloatValue="0"/>
+        </Constraint>
+
+        <Constraint
+                android:id="@id/collection_detail_author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 motion:layout_constraintRight_toRightOf="parent"
