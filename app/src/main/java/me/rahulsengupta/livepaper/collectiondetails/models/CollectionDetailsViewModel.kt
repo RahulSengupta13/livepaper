@@ -5,5 +5,7 @@ data class CollectionDetailsViewModel(
     val collectionAuthor: String?,
     val collectionDescription: String?,
     val collectionAuthorPhoto: String?,
-    val collectionCoverPhoto: String?
+    val collectionCoverPhoto: String?,
+    val instagramUsername: String?,
+    val twitterUsername: String?
 )

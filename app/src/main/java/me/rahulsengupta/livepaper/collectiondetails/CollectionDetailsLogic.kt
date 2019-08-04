@@ -32,7 +32,9 @@ class CollectionDetailsLogic(val listener: Listener, val api: CollectionDetailsA
                 collectionDetails.user?.name,
                 collectionDetails.description,
                 collectionDetails.user?.image?.medium,
-                collectionDetails.coverPhoto?.urls?.regular
+                collectionDetails.coverPhoto?.urls?.regular,
+                collectionDetails.user?.instagramUsername,
+                collectionDetails.user?.twitterUsername
             )
         }
     }

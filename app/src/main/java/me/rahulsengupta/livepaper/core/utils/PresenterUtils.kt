@@ -50,3 +50,11 @@ fun TextView.setTextAndVisibility(string: String?) {
         visibility = View.GONE
     }
 }
+
+fun TextView.setVisibility(string: String?) {
+    string?.let {
+        visibility = View.VISIBLE
+    } ?: run {
+        visibility = View.GONE
+    }
+}

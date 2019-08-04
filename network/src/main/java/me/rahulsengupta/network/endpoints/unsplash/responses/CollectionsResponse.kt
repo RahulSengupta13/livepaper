@@ -28,7 +28,11 @@ data class Collection(
     data class User(
         val name: String?,
         @SerializedName("profile_image")
-        val image: UserImage?
+        val image: UserImage?,
+        @SerializedName("twitter_username")
+        val twitterUsername: String?,
+        @SerializedName("instagram_username")
+        val instagramUsername: String?
     ) : Serializable {
 
         data class UserImage(
