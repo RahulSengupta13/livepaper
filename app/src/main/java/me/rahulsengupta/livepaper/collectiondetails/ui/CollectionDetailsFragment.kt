@@ -54,6 +54,10 @@ class CollectionDetailsFragment : Fragment(), CollectionDetailsPresenter.Listene
             CollectionDetailsPresenter.present(presenterContainer, it)
         })
 
+        avm.collectionWallpaperPagedList().observe(viewLifecycleOwner, Observer {
+            CollectionDetailsPresenter.presentWallpapers(presenterContainer, it)
+        })
+
         return root
     }
 

@@ -2,8 +2,10 @@ package me.rahulsengupta.livepaper.collectiondetails
 
 import me.rahulsengupta.livepaper.collectiondetails.api.CollectionDetailsApi
 import me.rahulsengupta.livepaper.collectiondetails.models.CollectionDetailsViewModel
+import me.rahulsengupta.livepaper.collectiondetails.models.CollectionWallpaperViewModel
 import me.rahulsengupta.livepaper.core.retrofit.RetrofitResult
 import me.rahulsengupta.network.endpoints.unsplash.responses.CollectionDetails
+import me.rahulsengupta.network.endpoints.unsplash.responses.CollectionWallpaper
 import timber.log.Timber
 
 class CollectionDetailsLogic(val listener: Listener, val api: CollectionDetailsApi) {
@@ -36,6 +38,14 @@ class CollectionDetailsLogic(val listener: Listener, val api: CollectionDetailsA
                 collectionDetails.user?.instagramUsername,
                 collectionDetails.user?.twitterUsername
             )
+        }
+
+        fun toWallpaperViewModel(response: List<CollectionWallpaper>): List<CollectionWallpaperViewModel> {
+            return response
+                .filter { it.urls.regular != null }
+                .map {
+                    CollectionWallpaperViewModel(it.urls.regular ?: "")
+                }
         }
     }
 }

@@ -5,11 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PageKeyedDataSource
 import androidx.paging.PagedList
-import me.rahulsengupta.livepaper.core.coroutine.ScopedViewModel
 import me.rahulsengupta.livepaper.collections.api.CollectionsApi
 import me.rahulsengupta.livepaper.collections.models.CollectionViewModel
 import me.rahulsengupta.livepaper.collections.models.CollectionsDataSource.Companion.PAGE_SIZE
 import me.rahulsengupta.livepaper.collections.models.CollectionsFactory
+import me.rahulsengupta.livepaper.core.coroutine.ScopedViewModel
 import me.rahulsengupta.livepaper.core.resourcemanager.ResourceManager
 
 class CollectionsAvm(api: CollectionsApi, resourceManager: ResourceManager) : ScopedViewModel() {

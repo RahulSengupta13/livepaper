@@ -17,7 +17,7 @@
                 android:fitsSystemWindows="false"
                 android:minHeight="?actionBarSize"
                 app:layoutDescription="@xml/collection_detail_scene"
-                app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed">
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
 
             <androidx.appcompat.widget.Toolbar
                     android:theme="@style/ToolbarTheme"
@@ -79,18 +79,12 @@
         </me.rahulsengupta.livepaper.core.customviews.CollapsibleToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
-            android:id="@+id/scrollable"
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/collection_details_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:background="@color/colorPrimary">
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Some text"/>
-    </androidx.core.widget.NestedScrollView>
-
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
