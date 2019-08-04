@@ -2,7 +2,6 @@ package me.rahulsengupta.livepaper.collections.ui
 
 import android.view.View
 import androidx.paging.PagedList
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout

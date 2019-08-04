@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_collection_wallpaper_layout.view.*
 import me.rahulsengupta.livepaper.R
@@ -24,6 +25,7 @@ class CollectionWallpaperPagedAdapter(
     override fun onBindViewHolder(holder: WallpaperViewHolder, position: Int) {
         getItem(position)?.run {
             Picasso.get().load(wallpaperUrl).into(holder.wallpaper)
+            holder.root.setOnClickListener { listener.onWallpaperClicked(wallpaperUrl) }
         }
     }
 
@@ -31,6 +33,7 @@ class CollectionWallpaperPagedAdapter(
     override fun getItemViewType(position: Int) = position
 
     class WallpaperViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val root: MaterialCardView = view.item_wallpaper_root
         val wallpaper: AppCompatImageView = view.collection_wallpaper_image
     }
 
@@ -47,5 +50,7 @@ class CollectionWallpaperPagedAdapter(
         }
     }
 
-    interface Listener
+    interface Listener {
+        fun onWallpaperClicked(wallpaperUrl: String)
+    }
 }

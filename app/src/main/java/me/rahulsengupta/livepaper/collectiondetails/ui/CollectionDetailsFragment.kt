@@ -61,6 +61,14 @@ class CollectionDetailsFragment : Fragment(), CollectionDetailsPresenter.Listene
         return root
     }
 
+
+    override fun onWallpaperClicked(wallpaperUrl: String) {
+        val args = Bundle().apply {
+            putString("wallpaperUrl", wallpaperUrl)
+        }
+        findNavController().navigate(R.id.action_collectionDetailsFragment_to_wallpaperFragment, args)
+    }
+
     override fun onInstagramClicked(instagramUsername: String?) {
         try {
             val intent = Intent(Intent.ACTION_VIEW).apply {

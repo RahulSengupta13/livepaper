@@ -31,5 +31,13 @@
               tools:layout="@layout/fragment_collection_detail">
         <argument android:name="collectionId" app:argType="integer" android:defaultValue="-1"/>
         <argument android:name="transitionName" app:argType="string"/>
+        <action android:id="@+id/action_collectionDetailsFragment_to_wallpaperFragment"
+                app:destination="@id/wallpaperFragment"/>
+    </fragment>
+    <fragment android:id="@+id/wallpaperFragment"
+              android:name="me.rahulsengupta.livepaper.wallpaper.ui.WallpaperFragment"
+              android:label="WallpaperFragment"
+              tools:layout="@layout/fragment_wallpaper">
+        <argument android:name="wallpaperUrl" app:argType="string"/>
     </fragment>
 </navigation>

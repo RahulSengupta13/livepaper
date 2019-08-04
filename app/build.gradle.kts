@@ -79,6 +79,7 @@ dependencies {
 
     //picasso
     implementation("com.squareup.picasso:picasso:2.71828")
+    implementation("com.github.bumptech.glide:glide:4.9.0")
 
     //palette
     implementation("com.android.support:palette-v7:28.0.0")
@@ -87,6 +88,9 @@ dependencies {
     implementation("com.mikhaellopez:circularimageview:4.0.1")
 
     implementation("androidx.recyclerview:recyclerview:1.1.0-beta01")
+
+    //ssiv
+    implementation("com.davemorrissey.labs:subsampling-scale-image-view:3.10.0")
 
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.2.0")
