@@ -39,6 +39,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:textAppearance="?attr/textAppearanceBody1"
+                    android:maxLength="50"
+                    android:ellipsize="end"
                     android:textColor="@color/white"/>
 
             <TextView
