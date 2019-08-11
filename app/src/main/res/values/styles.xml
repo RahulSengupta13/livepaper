@@ -33,6 +33,12 @@
         <item name="android:actionOverflowButtonStyle">@style/OverFlowMenuButtonStyle</item>
     </style>
 
+    <style name="ToolbarThemeTransparent" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverFlowMenuButtonStyle</item>
+    </style>
+
     <style name="OverflowMenuStyle" parent="Widget.AppCompat.PopupMenu.Overflow">
         <item name="android:textColor">@color/white</item>
         <item name="android:popupBackground">@color/colorPrimary</item>

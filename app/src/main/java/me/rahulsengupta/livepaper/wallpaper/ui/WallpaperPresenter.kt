@@ -13,7 +13,7 @@ class WallpaperPresenter {
 
         init {
             wallpaper.setPanLimit(SubsamplingScaleImageView.PAN_LIMIT_INSIDE)
-            wallpaper.setMinimumScaleType(SubsamplingScaleImageView.SCALE_TYPE_CENTER_INSIDE)
+            wallpaper.setMinimumScaleType(SubsamplingScaleImageView.SCALE_TYPE_CENTER_CROP)
             wallpaper.animateScale(3f)?.start()
         }
     }
