@@ -3,6 +3,7 @@ package me.rahulsengupta.network.endpoints.unsplash
 import me.rahulsengupta.network.endpoints.unsplash.responses.Collection
 import me.rahulsengupta.network.endpoints.unsplash.responses.CollectionDetails
 import me.rahulsengupta.network.endpoints.unsplash.responses.CollectionWallpaper
+import me.rahulsengupta.network.endpoints.unsplash.responses.Wallpaper
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -27,4 +28,9 @@ interface UnsplashEndpoints {
         @Query("page") page: Int,
         @Query("per_page") perPage: Int
     ): Call<List<CollectionWallpaper>>
+
+    @GET("/photos/{id}/")
+    fun getWallpaper(
+        @Path("id") id: String
+    ): Call<Wallpaper>
 }

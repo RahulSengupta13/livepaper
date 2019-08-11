@@ -3,12 +3,18 @@ package me.rahulsengupta.livepaper.core.utils
 import android.graphics.Bitmap
 import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.palette.graphics.Palette
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
+import com.davemorrissey.labs.subscaleview.ImageSource
+import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
 import com.squareup.picasso.Picasso
 import me.rahulsengupta.livepaper.R
 
@@ -57,4 +63,18 @@ fun TextView.setVisibility(string: String?) {
     } ?: run {
         visibility = View.GONE
     }
+}
+
+fun SubsamplingScaleImageView.setImageAndAnimate(imageUrl: String) {
+    Glide
+        .with(context)
+        .asBitmap()
+        .load(imageUrl)
+        .into(object: CustomTarget<Bitmap>() {
+            override fun onLoadCleared(placeholder: Drawable?) = Unit
+            override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+                setImage(ImageSource.bitmap(resource))
+                animateScale(1.25f)?.start()
+            }
+        })
 }

@@ -62,9 +62,9 @@ class CollectionDetailsFragment : Fragment(), CollectionDetailsPresenter.Listene
     }
 
 
-    override fun onWallpaperClicked(wallpaperUrl: String) {
+    override fun onWallpaperClicked(wallpaperId: String) {
         val args = Bundle().apply {
-            putString("wallpaperUrl", wallpaperUrl)
+            putString("wallpaperId", wallpaperId)
         }
         findNavController().navigate(R.id.action_collectionDetailsFragment_to_wallpaperFragment, args)
     }

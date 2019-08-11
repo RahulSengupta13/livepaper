@@ -44,7 +44,7 @@ class CollectionDetailsLogic(val listener: Listener, val api: CollectionDetailsA
             return response
                 .filter { it.urls.regular != null }
                 .map {
-                    CollectionWallpaperViewModel(it.urls.regular ?: "")
+                    CollectionWallpaperViewModel(it.id, it.urls.regular ?: "")
                 }
         }
     }

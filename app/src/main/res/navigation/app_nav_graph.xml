@@ -38,6 +38,6 @@
               android:name="me.rahulsengupta.livepaper.wallpaper.ui.WallpaperFragment"
               android:label="WallpaperFragment"
               tools:layout="@layout/fragment_wallpaper">
-        <argument android:name="wallpaperUrl" app:argType="string"/>
+        <argument android:name="wallpaperId" app:argType="string"/>
     </fragment>
 </navigation>

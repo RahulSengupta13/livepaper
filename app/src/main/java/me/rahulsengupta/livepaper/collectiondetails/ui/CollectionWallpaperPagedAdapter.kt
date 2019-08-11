@@ -25,7 +25,7 @@ class CollectionWallpaperPagedAdapter(
     override fun onBindViewHolder(holder: WallpaperViewHolder, position: Int) {
         getItem(position)?.run {
             Picasso.get().load(wallpaperUrl).into(holder.wallpaper)
-            holder.root.setOnClickListener { listener.onWallpaperClicked(wallpaperUrl) }
+            holder.root.setOnClickListener { listener.onWallpaperClicked(id) }
         }
     }
 
@@ -51,6 +51,6 @@ class CollectionWallpaperPagedAdapter(
     }
 
     interface Listener {
-        fun onWallpaperClicked(wallpaperUrl: String)
+        fun onWallpaperClicked(wallpaperId: String)
     }
 }

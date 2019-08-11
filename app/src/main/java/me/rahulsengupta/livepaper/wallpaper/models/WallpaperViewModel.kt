@@ -1,5 +1,7 @@
 package me.rahulsengupta.livepaper.wallpaper.models
 
 data class WallpaperViewModel(
-    val wallpaperUrl: String
+    val wallpaperDisplayUrl: String,
+    val centerX: Float,
+    val centerY: Float
 )
